@@ -42,6 +42,7 @@ const privateRoutes = [
         path: '/user/info/:id',
         name: 'userInfo',
         component: () => import('@/views/user-info/index'),
+        props: true,
         meta: {
           title: 'userInfo'
         }
@@ -50,6 +51,7 @@ const privateRoutes = [
         path: '/user/import',
         name: 'import',
         component: () => import('@/views/import/index'),
+        props: true,
         meta: {
           title: 'excelImport'
         }

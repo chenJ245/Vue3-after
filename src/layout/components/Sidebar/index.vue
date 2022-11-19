@@ -1,13 +1,9 @@
 <template>
   <div class="">
     <div class="logo-container">
-      <el-avatar
-        :size="logoHeight"
-        shape="square"
-        src="https://m.imooc.com/static/wap/static/common/img/logo-small@2x.png"
-      />
+      <el-avatar :size="logoHeight" shape="square" src="./1.jpg" />
       <h1 class="logo-title" v-if="$store.getters.sidebarOpened">
-        imooc-admin
+        White-admin
       </h1>
     </div>
     <el-scrollbar>

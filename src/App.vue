@@ -5,18 +5,18 @@
 <script setup>
 import { useStore } from 'vuex'
 import { generateNewStyle, writeNewStyle } from '@/utils/theme'
+import { watchSwitchLang } from '@/utils/i18n'
 
 const store = useStore()
-generateNewStyle(store.getters.mainColor).then(newStyleText => {
+generateNewStyle(store.getters.mainColor).then((newStyleText) => {
   writeNewStyle(newStyleText)
+})
+
+watchSwitchLang(() => {
+  if (store.getters.token) {
+    store.dispatch('user/getUserInfo')
+  }
 })
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-</style>
+<style></style>
